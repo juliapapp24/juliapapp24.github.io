@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FED2FB;
+  font-family: 'Rokkitt', serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  color: white;
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+}
+
+header ul {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1vw;
+  list-style: none;
+}
+
+header ul li {
+  margin-right: 2vw;
+}
+
+header ul li.active a {
+  text-decoration: underline;
+}
+
+header ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+
+.rectangle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 45vh;
+  border-radius: 200px;
+  position: relative;
+  z-index: 1;
+
+}
+
+#yellow-rectangle {
+  background-color: #FEFA70;
+}
+
+#blue-rectangle {
+  background-color: #1B37FD;
+}
+
+.text-box p {
+  margin-left: 5vw;
+  font-size: 6vw;
+  font-weight: bold;
+  line-height: 0.8;
+  z-index: 2;
+}
+
+
+.image img {
+  position: absolute;
+  z-index: 1;
+  right: 5vw;
+  bottom: -4vh;
+  max-width: 40vw;
+  height: auto;
+}
+
+
+.animated-text p {
+  position: absolute;
+  font-size: 5vw;
+  color: white;
+  font-weight: bold;
+  left: -100%;
+  top: 0;
+  width: 60vw;
+  white-space: pre-wrap;
+  z-index: 100;
+  mix-blend-mode: exclusion;
+}
+
+
+#black-rectangle {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  z-index: 0;
+  shape-outside: inset(0 round 200px);
+  clip-path: inset(0 round 200px);
+}
+
+.fixed-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 10;
+}
+
+
+.animated-text-zerosones {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  mix-blend-mode: difference;
+
+}
+
+.animated-text-zerosones p {
+  font-size: 3vw;
+  color: black;
+}
+
+
+#zerosones-text {
+  position: relative;
+  animation: slide 3s linear infinite;
+}
+
+#zerosones-mask {
+  background: linear-gradient(to bottom, black 33%, white 33%, #FED2FB 50%, hotpink 67%);
+  background-clip: text;
+  color: transparent;
+  overflow: hidden;
+  z-index: 2;
+}
+
+
+#transparent-rectangle {
+  background: transparent;
+  width: 100vw;
+  height: 200vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 15;
+}
+
+
+#typeout-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  color: hotpink;
+  font-weight: bold;
+  z-index: 20;
+  white-space: nowrap;
+
+}
+
+#typeout-text span {
+  opacity: 0;
+  transition: opacity 0.1s linear;
+}
+
+.full-page {
+  overflow-x: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+#full-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.animatedphoto2 {
+  width: 100%;
+  min-width: 500px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.animatedphoto0,
+.animatedphoto1,
+.animatedphoto3 {
+  width: 100%;
+  /* set the width to 100% of its parent */
+  display: flex;
+  /* this will allow to use justify-content and align-items */
+  justify-content: left;
+  /* center the child img horizontally */
+  align-items: center;
+  /* center the child img vertically */
+}
+
+.animatedphoto0 {
+  opacity: 0%;
+}
+
+#plane0,
+#plane1,
+#plane3 {
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+
+}
+
+#plane2 {
+  transform: translateX(50%);
+  width: 100%;
+  height: auto;
+}
+
+
+@keyframes slide {
+  0% {
+    top: 100%;
+  }
+
+  100% {
+    top: -100%;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+@media (min-width: 1024px) {
+  header ul li a {
+    font-size: 32px;
+  }
+
+  .text-box p {
+    margin-left: 150px;
+    font-size: 112px;
+  }
+
+  .image img {
+    right: 150px;
+    bottom: -57px;
+  }
+
+  .animated-text p {
+    font-size: 80px;
+    width: 60%;
+  }
+
+  .animated-text-zerosones p {
+    font-size: 40px;
+  }
+
+  #typeout-text {
+    font-size: 80px;
+  }
+
+  #plane0,
+  #plane1,
+  #plane2,
+  #plane3 {
+    max-width: 500px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  header ul li a {
+    font-size: max(2vw, 20px);
+  }
+
+  .text-box p {
+    font-size: max(6vw, 40px);
+  }
+
+  .animated-text p {
+    font-size: max(5vw, 40px);
+  }
+
+  .animated-text-zerosones p {
+    font-size: max(3vw, 20px);
+  }
+
+  #typeout-text {
+    font-size: max(2vw, 40px);
+  }
+
+  #plane0,
+  #plane1,
+  #plane2,
+  #plane3 {
+    max-width: 500px;
+  }
+}
