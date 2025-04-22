@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FED2FB;
+  font-family: 'Rokkitt', serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  color: white;
+  margin-top: 4vh;
+  margin-bottom: 10vh;
+}
+
+header ul {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1vw;
+  list-style: none;
+}
+
+header ul li {
+  margin-right: 2vw;
+}
+
+header ul li.active a {
+  text-decoration: underline;
+}
+
+header ul li a {
+  color: white;
+  font-size: calc(16px + 0.5vw);
+  text-decoration: none;
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.reach-text {
+  text-align: center;
+}
+
+.reach-text p {
+  font-size: max(4vw, 32px);
+  font-weight: bold;
+  color: white;
+  gap: max(2vh, 32px);
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: max(5vw, 100px);
+  height: max(40vh, 20px);
+}
+
+.icon-container a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s;
+}
+
+.icon-container p {
+  color: white;
+  font-size: calc(16px + 4vw);
+  font-weight: bold;
+}
+
+.icon-container img {
+  max-height: 8vw;
+  max-height: calc(16px + 8vw);
+  transition: transform 0.3s;
+}
+
+.icon-container a:hover img {
+  transform: scale(1.1);
+}
+
+
+@media (min-width: 1024px) {
+  header ul li a {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 800px) {
+  header ul li a {
+    font-size: max(2vw, 20px);
+  }
+
+  .reach-text p {
+    font-size: max(4vw, 32px);
+    text-align: center;
+  }
+
+  .boochie {
+    min-height: 20vh;
+  }
+
+  .icon-container {
+    flex-direction: column;
+    gap: 50px;
+
+  }
+
+  header {
+    font-size: 17px;
+  }
+}

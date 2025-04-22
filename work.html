@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style_work.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+  <script src="script_work.js" defer></script> <!-- Use 'defer' to ensure script runs after HTML is loaded -->
+</head>
+
+
+<body>
+  <header>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="active"><a href="work.html">Work</a></li>
+      <li><a href="papp_resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </header>
+
+  <div class="container">
+    <div class="image-container">
+      <div class="img-wrap" data-modal-target="#modal1-algo">
+        <img src="blue.png">
+        <img src="work_cs4820.png" alt="algo">
+      </div>
+      <div class="img-wrap" data-modal-target="#modal2-hack">
+        <img src="pink.png">
+        <img src="work_hack.png" alt="hack">
+      </div>
+
+      <div class="img-wrap" data-modal-target="#modal3-cct">
+        <img src="yellow.png">
+        <img src="work_cct.png" alt="cct">
+
+      </div>
+
+      <div class="img-wrap" data-modal-target="#modal4-lfbi">
+        <img src="yellow.png">
+        <img src="work_lfbi.png" alt="lfbi">
+
+      </div>
+
+      <div class="img-wrap" data-modal-target="#modal5-networks">
+        <img src="blue.png">
+        <img src="work_cs2850.png" alt="networks">
+
+      </div>
+
+      <div class="img-wrap" data-modal-target="#modal6-elc">
+        <img src="pink.png">
+        <img src="work_elc.png" alt="elc">
+
+      </div>
+
+      <div class="img-wrap" data-modal-target="#modal7-nexus">
+        <img src="pink.png">
+        <img src="work_nexus.png" alt="nexus">
+
+      </div>
+
+      <div class="img-wrap" data-modal-target="#modal8-pomodoro">
+        <img src="yellow.png">
+        <img src="work_pomodoro.png" alt="pomodoro">
+      </div>
+
+
+      <div class="modal" id="modal1-algo">
+        <div class="modal-content">
+          <img src="work_cs4820_2.png" alt="algo" class="modal-image">
+          <h2>Teaching Assistant for Analysis of Algorithms</h2>
+          <ul>
+            <li>Conducted weekly office hours, offering individualized support to students in CS4820
+            <li>Provided constructive feedback on assignments and exams, ensuring fair and accurate grading
+            <li>Facilitated a collaborative learning environment by guiding students through complex algorithmic
+              concepts and problem-solving strategies
+          </ul>
+          <a href="https://courses.cs.cornell.edu/cs4820/2023sp/" target="_blank">Read more about the class content!</a>
+        </div>
+      </div>
+
+
+      <div class="modal" id="modal2-hack">
+        <div class="modal-content">
+          <img src="work_hack2.png" alt="algo" class="modal-image">
+          <h2>Software Developer on Hack4Impact</h2>
+          <p>My experience as a software developer & product designer on Cornell’s award winning project team,
+            Hack4Impact, has equipped me with a deep understanding of the challenges faced by communities in
+            lower-resource environments and the importance of designing solutions that are accessible and inclusive.
+          </p>
+          <a href="https://cornellh4i.org/" target="_blank">Read more Hack4Impact's mission!</a>
+        </div>
+      </div>
+
+
+      <div class="modal" id="modal3-cct">
+        <div class="modal-content">
+          <img src="work_cct2.png" alt="cct" class="modal-image">
+          <h2>Reasearch Assistant for Communication & Collaborative Technologies</h2>
+          <ul>
+            <li>Accepted to C&CT research team with NSF funding, demonstrating expertise and potential in the field
+            <li>Applied iterative design thinking and performed rigorous testing to pinpoint areas for improvement in
+              remote and hybrid communication and multilingual group dynamics
+            <li>Utilized user interviews as a powerful tool to effectively identify instances of misunderstandings in
+              social intentions, enabling targeted intervention and resolution strategies
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="modal" id="modal4-lfbi">
+        <div class="modal-content">
+          <img src="work_lfbi2.png" alt="lfbi" class="modal-image">
+          <h2>Improving Lagos Food Bank's UX</h2>
+          <ul>
+            <li>Conducted user research with Lagos Food Bank volunteers to analyze and solve problems their users face
+            <li>Applied iterative design thinking and worked with software engineers to launch product
+            <li>Created a design system on Figma to ensure consistency across the platform
+          </ul>
+          <a href="https://medium.com/@jgp88/ux-case-study-lago-6ad4b5e39123" target="_blank">Read my case study!
+          </a>
+        </div>
+      </div>
+
+
+      <div class="modal" id="modal5-networks">
+        <div class="modal-content">
+          <img src="work_cs2850_2.png" alt="networks" class="modal-image">
+          <h2>Teaching Assistant for Networks</h2>
+          <ul>
+            <li>Conducted weekly office hours, offering individualized support to students in CS2850
+            <li>Provided constructive feedback on assignments and exams, ensuring fair and accurate grading
+            <li>Instructed students on the application of graph theory and game theory tools, enabling them to develop
+              analytical frameworks for effective network analysis.
+          </ul>
+          <a href="https://classes.cornell.edu/browse/roster/FA23/class/ECON/2040" target="_blank">Read more about the
+            class content!</a>
+        </div>
+      </div>
+
+
+      <div class="modal" id="modal6-elc">
+        <div class="modal-content">
+          <img src="work_elc2.png" alt="elc" class="modal-image">
+          <h2>Product Designer for ELC</h2>
+          <ul>
+            <li>Designed an admin page for a non-profit organization to enhance the user experience for the admins
+            <li>Lead weekly partner meetings to find the problem space, talk to users of the organization, and ideated
+              solutions to
+              better the user experience
+            <li>Prototyped the final flow and created a design-developer handoff
+          </ul>
+          <a href="https://medium.com/@jgp88/earth-law-center-admin-page-ux-case-study-c4925782d637"
+            target="_blank">Read my case study!</a>
+        </div>
+      </div>
+
+
+      <div class="modal" id="modal7-nexus">
+        <div class="modal-content">
+          <img src="work_nexus2.png" alt="nexus" class="modal-image">
+          <h2>Research Assistant at Moral Psychology Lab</h2>
+          <ul>
+            <li>Selected for Cornell University's Inaugural Cohort of Nexus Research Scholars to complete a full-time
+              research program with a 10% acceptance rate Conducted literature reviews to create scales for the
+              dependent variables
+            </li>
+            <li>Used statistics, text analysis, experimental design, and programming to set up the study</li>
+            <li>Analyzed the research findings in JASP and Excel
+            </li>
+          </ul>
+          <a href="https://docs.google.com/presentation/d/1Ub2HuIFG52BHep6vC4i9VPsz4e2NVF4R9Askw-8bOVI/edit?usp=sharing"
+            target="_blank">Read my findings!</a>
+        </div>
+      </div>
+
+
+      <div class="modal" id="modal8-pomodoro">
+        <div class="modal-content">
+          <img src="work_pomodoro2.png" alt="algo" class="modal-image">
+          <h2>Software Developer</h2>
+          <ul>
+            <li>Developed a customizable Pomodoro productivity timer using OCaml
+            <li>Utilized OCaml GUI and procedural generation techniques to create an interactive user interface
+              Integrated time
+              installation functionalities to enhance the timer's accuracy and reliability
+            <li>Collaborated with a team of two other software engineers to successfully implement the project
+          </ul>
+          <a href="" target="_blank">Check out this project!</a>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+  <div class="transparent-rectangle"></div>
+
+
+</body>
+
+</html>
