@@ -1,0 +1,576 @@
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt&display=swap');
+
+/* === Base Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FED2FB;
+  font-family: 'Rokkitt', serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+h1 {
+	color: #FE65D7;
+	font-size: 48px;
+	align-self: left;
+	padding-left: 8px;
+}
+
+/* === Header === */
+header {
+  width: 100%;
+  color: white;
+  margin: 4vh 0 10vh;
+}
+
+header ul {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1vw;
+  list-style: none;
+}
+
+header ul li {
+  margin-right: 2vw;
+}
+
+header ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 2px;
+  font-weight: bold;
+}
+
+header ul li.active a {
+  text-decoration: underline;
+}
+
+/* === Modal === */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 3;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.1); /* soft background tint */
+  overflow: hidden; /* prevent body scroll while modal is open */
+}
+
+
+.modal-content {
+  background: white;
+  border-radius: 24px;
+  padding: 32px;
+  overflow-y: auto;
+  max-width: 70%;
+  max-height: 85%; 
+  width: auto;
+  height: auto;
+  margin: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* subtle shadow */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+}
+
+.modal-content ul {
+  margin: 0 24px 0 20px;
+  padding-left: 16px;
+}
+
+.modal h1 {
+  font-size: 40px;
+  color: #FE65D7;
+}
+
+
+/* === Modal Scrollbar Styling === */
+
+
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-content::-webkit-scrollbar-track {
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 8px;
+}
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* Scrollbar - Firefox */
+.modal-content {
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f9f9f9;
+}
+
+/* === Containers === */
+.container {
+  width: 100%;
+  margin: 8px;
+
+}
+
+.card-grid,
+.image-container, 
+.card-grid-fulltime {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 960px;
+
+}
+
+.card-grid-title {
+  justify-content: left;
+	align-self: left;
+	margin-bottom: 2vh;
+	margin-top: 1vh;
+  text-align: left;
+}
+
+/* === Work Units (General) === */
+
+.work-unit,
+.work-unit-fulltime {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.work-unit {
+  width: 256px;
+  max-width: 256px;
+  height: 354px;
+}
+
+.work-unit-fulltime {
+  width: 816px;
+}
+
+/* === Layers === */
+.background-layer,
+.background-layer-fulltime {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  pointer-events: none;
+	transition: transform 0.2s ease; /* added for smoother interaction */
+
+}
+
+.background-layer img{
+	width: 248px;
+	height: 344px;
+  object-fit: cover;
+	border: 0.25px solid black;
+}
+
+.background-layer-fulltime img {
+  width: 808px;
+  height: 300px;
+}
+
+.content-layer{
+	position: relative;
+  border-radius: 2px;
+	top: 8px;
+  left: 8px;
+	width: 248px;
+	height: 360px;  
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+	transition: transform 0.2s ease; 
+}
+
+.content-layer-fulltime {
+  position: relative;
+  border-radius: 2px;
+	top: 8px;
+  left: 8px;
+	width: 808px;
+	height: 360px;  
+  z-index: 2;
+  display: flex;
+	background-color: white;
+	border: 0.25px solid black;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+	transition: transform 0.2s ease; 
+}
+
+/* === Tags and Titles === */
+.tag-row,
+.tag-row-fulltime {
+	background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 4px 4px 8px;
+  border: 0.5px solid black;
+}
+
+.tag-text,
+.tag-text-fulltime {
+  font-weight: bold;
+}
+
+.pill,
+.pill-fulltime {
+  border: 0.5px solid black;
+  border-radius: 20px;
+  padding: 2px 4px;
+  font-size: 12px;
+}
+
+.title-section,
+.title-section-fulltime {
+  padding: 8px 4px 4px 8px;
+  border: 0.5px solid black;
+	background-color: white;
+
+}
+
+.title-section h3,
+.title-section-fulltime h3 {
+  font-size: 28px;
+  line-height: 0.75;
+}
+
+.title-section h4,
+.title-section-fulltime h4 {
+  font-size: 12px;
+}
+
+/* === Image & Description === */
+.image-and-description {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.image-section-fulltime {
+  max-width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+.description-box,
+.description-box-fulltime {
+  flex: 1;
+  align-self: center;
+}
+
+.description-box p,
+.description-box-fulltime p {
+  font-size: 14px;
+  line-height: 1;
+  padding: 8px 4px 8px 8px;
+	background-color: white;
+}
+
+.description-box p {
+	border: 0.5px solid black;
+
+}
+
+/* === Media Queries === */
+@media (min-width: 1024px) {
+  header ul li a {
+    font-size: 32px;
+  }
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 840px;
+  }
+}
+
+.work-unit:hover .content-layer, 
+.work-unit-fulltime:hover .content-layer-fulltime {
+  transform: translate(-8px, -8px);
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 560px;
+  }
+
+	.modal-content {
+		width: 60%;
+	}
+
+}
+
+@media (max-width: 639px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+  }
+
+	.modal-content {
+		width: 60%;
+	}
+
+}
+
+/* Ensure all h2 tags are on a new line */
+h2 {
+  display: block; /* Ensure h2 elements are block-level and appear on a new line */
+}
+
+.section-left {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensures subtitle is above description */
+.section-left .subtitle {
+  margin-bottom: 2px; /* Adds space between subtitle and description */
+}
+
+.arrow {
+  font-size: 32px;
+  align-self: center;
+  color: #000;
+}
+
+
+.tip {
+  flex: 1 1 50%;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.25;
+  color: #555;
+  padding-top: 20px;
+}
+
+/* Style for the description, which takes 40% of the row */
+.subtitle {
+  font-size: 20px;
+  line-height: 1;
+  font-weight: bold;
+  text-decoration: underline;
+  color: black;
+}
+
+
+/* Style for the description, which takes 40% of the row */
+.description {
+  font-size: 18px;
+  line-height: 1.25;
+  color: #333;
+}
+
+.description-list {
+  font-size: 18px;
+  line-height: 1.25;
+  color: #333;
+  margin-left: 1.5em; /* Optional: adds spacing for bullet indent */
+  padding-left: 0;     /* Optional: reset default browser padding */
+  list-style-type: disc;
+}
+
+.description-list li {
+  margin-bottom: 0.5em; /* Optional: spacing between list items */
+}
+
+.modal-subtitle {
+  color: black;
+	font-size: 28px;
+  font-weight: bold;
+	align-self: left;
+  padding-top: 16px;
+  border-bottom: 2px solid #FE65D7; /* subtle underline */
+  flex: 0 0 100%;
+  
+}
+
+
+.title {
+	font-size: 20px;
+	font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 4px;
+}
+
+
+/* Media query for responsiveness (optional, for smaller screen sizes) */
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column; /* Stack the elements vertically on smaller screens */
+  }
+
+  .section-left,
+  .arrow,
+  .tip {
+    width: 100%; /* Make each element take full width on small screens */
+  }
+}
+
+/* === Modal === */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.2); /* soft background tint */
+  overflow: hidden; /* prevent body scroll while modal is open */
+}
+
+.modal-content ul {
+  margin: 0 24px 0 20px;
+  padding-left: 16px;
+}
+
+.modal h1 {
+  font-size: 40px;
+  color: #FE65D7;
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.section-left {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.arrow {
+  font-size: 32px;
+  align-self: center;
+  color: #000;
+}
+
+.tip {
+  flex: 1 1 50%;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.25;
+  color: #555;
+  padding-top: 20px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 4px;
+}
+
+/* Scrollbar - Webkit */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-content::-webkit-scrollbar-track {
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 8px;
+}
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+#modal6-hack-design img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+#modal4-hack-dev img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Scrollbar - Firefox */
+.modal-content {
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f9f9f9;
+}
+
+/* === Responsive Modal === */
+@media (max-width: 1024px) {
+  .modal-content {
+    max-width: 80%;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .modal-content {
+    max-width: 90%;
+    padding: 16px;
+  }
+  .section {
+    flex-direction: column;
+  }
+  .arrow, .tip, .section-left {
+    width: 100%;
+    text-align: center;
+  }
+}

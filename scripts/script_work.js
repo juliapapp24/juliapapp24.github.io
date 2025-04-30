@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const imgWraps = document.querySelectorAll('.img-wrap');
+  const workUnits = document.querySelectorAll('.work-unit');
   const modals = document.querySelectorAll('.modal');
 
-  imgWraps.forEach(imgWrap => {
-    imgWrap.addEventListener('click', () => {
-      const modalId = imgWrap.getAttribute('data-modal-target');
-      document.querySelector(modalId).style.display = 'flex';
+  workUnits.forEach(unit => {
+    unit.addEventListener('click', () => {
+      const modalId = unit.getAttribute('data-modal-target');
+      const modal = document.querySelector(modalId);
+      if (modal) {
+        modal.style.display = 'flex';
+      }
     });
   });
 
@@ -17,3 +20,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+

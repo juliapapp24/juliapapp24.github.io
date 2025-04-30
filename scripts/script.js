@@ -1,6 +1,3 @@
-
-// import { Application } from '@splinetool/runtime';
-
 window.onload = function () {
   var controller = new ScrollMagic.Controller();
   var blackRectangleHeight = window.innerHeight;
@@ -157,11 +154,3 @@ window.onload = function () {
 
 
 };
-
-
-
-
-
-
-
-
